@@ -1,0 +1,258 @@
+/* Enhanced style.css */
+
+body {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #0a74da, #9f00fe);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #ffffff;  /* General text color set to white for better contrast */
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    font-family: 'Cinzel', serif;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    font-size: 18px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    overflow: auto;
+}
+
+form label {
+    color: #000;  /* Black text color */
+    font-size: 18px;
+    margin-right: 10px;  /* Space between label and input/select */
+}
+
+select, input[type="range"] {
+    width: 75%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin: 10px auto;
+    box-sizing: border-box;
+    background-color: #ffffff;  /* Ensuring a light background for readability */
+    color: #000000;  /* Ensuring text is readable */
+}
+
+select {
+    appearance: none;  /* Removing default appearance */
+    -webkit-appearance: none;  /* For Safari */
+    -moz-appearance: none;  /* For Firefox */
+    background: url('path-to-your-icon/dropdown-arrow.png') no-repeat right center;  /* Custom dropdown arrow */
+    background-size: 15px;  /* Adjust size as needed */
+    padding-right: 25px;  /* Padding to ensure text doesn’t overlap the arrow */
+}
+
+input[type="range"] {
+    -webkit-appearance: none;  /* Removing default appearance for Chrome */
+    appearance: none;
+    height: 15px;  /* Adjusting height */
+    background: #ccc;  /* Neutral background color */
+    outline: none;  /* Removing focus outline */
+    opacity: 0.7;  /* Adding slight transparency */
+    transition: opacity 0.2s;  /* Smooth transition for hover state */
+}
+
+input[type="range"]:hover {
+    opacity: 1;  /* Full opacity on hover */
+}
+/* Slider Track */
+input[type=range] {
+    width: 80%;
+    height: 15px;
+    margin: 20px 0;
+    background: linear-gradient(to right, #0a74da, #9f00fe); /* Using the same gradient as your background */
+    outline: none;
+    -webkit-appearance: none;
+}
+
+/* Slider Thumb (the circle you drag) */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff; /* Using the first color of your gradient */
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #0a74da; /* Using the first color of your gradient */
+    cursor: pointer;
+}
+.slider-container {
+    display: flex;
+    align-items: center;
+}
+
+input[type="range"] {
+    width: 75%;
+    margin-right: 10px;
+}
+
+span {
+    font-size: 18px;
+}
+
+form {
+    color: #000;
+}
+input[type="submit"],
+button[type="button"] {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    background-color: #0a74da;  /* Color from the gradient */
+    color: #ffffff;  /* Text color for buttons */
+}
+
+input[type="submit"]:hover,
+button[type="button"]:hover {
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
+    background-color: #9f00fe;  /* Another color from the gradient */
+}
+
+.add-anime-button {
+    margin: 10px 10px 30px 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.recommendation-list {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+.recommendation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    width: 80%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+    margin: 16px;
+    padding: 16px;
+    width: 250px;  /* Increased width to accommodate longer titles */
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;  /* Stack children vertically */
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;  /* Ensure images cover the area without stretching */
+    height: 150px;  /* Fixed height for images */
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin: 12px 0;
+    color: #0a74da;
+    overflow: hidden;  /* Hide overflow text */
+    text-overflow: ellipsis;  /* Add ellipsis for overflow text */
+    white-space: nowrap;  /* Keep text on a single line */
+    width: 90%;  /* Prevent text from touching the edges */
+}
+
+.card-footer {
+    margin-top: auto;
+    color: #555;
+}
+.card {
+    min-height: 350px;  /* Ensuring a minimum height for all cards */
+}
+
+.card-title {
+    max-width: 220px;  /* Limiting width to avoid overflow */
+}
+
+
+nav {
+    background: linear-gradient(to right, #0a74da, #9f00fe);
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: #ffffff; 
+    text-align: center;
+    padding: 10px 12px; 
+    text-decoration: none;
+    font-size: 14px; 
+    font-weight: 500; 
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; 
+}
+
+nav a:hover {
+    color: #f8f8f8; 
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.blue {
+    color: #0a74da;
+}
