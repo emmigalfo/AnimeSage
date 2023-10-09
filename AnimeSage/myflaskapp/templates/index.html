@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeSage</title>
+</head>
+<body>
+    <h1>Anime Sage</h1>
+   <form action="/recommend" method="post" id="ratingForm">
+   <div id="animeRatings">
+    <!-- Initial anime-rating pair -->
+    <div class="animeRatingPair">
+        <label for="anime1">Select Anime:</label>
+        <select id="anime1" name="anime[]">
+            {% for anime in popular_anime %}
+                <option value="{{ anime.MAL_ID }}">{{ anime.Name }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="rating1">Rating:</label>
+        <input type="range" id="rating1" name="rating[]" min="1" max="10" step="1" value="5" oninput="updateRatingDisplay(1)">
+        <span id="ratingDisplay1">5</span>/10
+    </div>
+</div>
+    <div class="button-container" style="margin-top: 20px;">
+    <button type="button" onclick="addAnimeRatingPair()" class="add-anime-button">Rate Another Anime</button><br>
+    <input type="submit" value="Get Recommendations" style="margin-top: 10px;">
+</div>
+    
+    
+    
+<script>
+function updateRatingDisplay(id) {
+    var slider = document.getElementById('rating' + id);
+    var display = document.getElementById('ratingDisplay' + id);
+    console.log("Updating display for:", id, "with value:", slider.value);  // Add this line
+    display.innerText = slider.value;
+}
+
+let pairCount = 1;  // Keep track of how many pairs have been added
+
+function addAnimeRatingPair() {
+    pairCount++;
+
+    // Create new select element for anime
+    const newAnimeSelect = document.createElement('select');
+    newAnimeSelect.id = 'anime' + pairCount;
+    newAnimeSelect.name = 'anime[]';
+    
+    // Add options to the new select element
+    const animeOptions = {{ popular_anime|tojson }};
+    animeOptions.forEach(anime => {
+        const option = document.createElement('option');
+        option.value = anime.MAL_ID;
+        option.innerText = anime.Name;
+        newAnimeSelect.appendChild(option);
+    });
+    
+    // Create new input element for rating
+    const newRatingInput = document.createElement('input');
+    newRatingInput.type = 'range';
+    newRatingInput.id = 'rating' + pairCount;
+    newRatingInput.name = 'rating[]';
+    newRatingInput.min = '1';
+    newRatingInput.max = '10';
+    newRatingInput.step = '1';
+    newRatingInput.value = '5';
+    newRatingInput.addEventListener('input', function() {
+    updateRatingDisplay(pairCount);
+    });
+    
+    // Create new span element to display rating
+    const newRatingDisplay = document.createElement('span');
+    newRatingDisplay.id = 'ratingDisplay' + pairCount;
+    newRatingDisplay.innerText = '5';
+    
+    // Create new labels and divs, and append everything to the form
+    const newAnimeLabel = document.createElement('label');
+    newAnimeLabel.for = 'anime' + pairCount;
+    newAnimeLabel.innerText = 'Select Anime:';
+    
+    const newRatingLabel = document.createElement('label');
+    newRatingLabel.for = 'rating' + pairCount;
+    newRatingLabel.innerText = 'Rating:';
+    
+    const newAnimeRatingPair = document.createElement('div');
+    newAnimeRatingPair.className = 'animeRatingPair';
+    
+    newAnimeRatingPair.appendChild(newAnimeLabel);
+    newAnimeRatingPair.appendChild(newAnimeSelect);
+    newAnimeRatingPair.appendChild(newRatingLabel);
+    newAnimeRatingPair.appendChild(newRatingInput);
+    newAnimeRatingPair.appendChild(newRatingDisplay);
+    newAnimeRatingPair.appendChild(document.createTextNode('/10'));
+    
+    document.getElementById('animeRatings').appendChild(newAnimeRatingPair);
+}
+function showLoadingSpinner() {
+    document.getElementById('loadingSpinner').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
