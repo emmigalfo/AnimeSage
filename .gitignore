@@ -8,5 +8,8 @@ ipython_config.py
 # Ignore CSV files
 *.csv
 
+# Ignore pickled files
+*.pkl
+
 # Ignore the entire Anime_Dataset folder and its contents
 Anime_Dataset/
