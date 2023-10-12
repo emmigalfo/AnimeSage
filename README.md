@@ -49,9 +49,23 @@ __Insights:__
 2. Toei Animation dominated in terms of studios with the most anime listed.  
 3. Most anime was rated either PG-13, or G.
 
-## Results and Conclusions
+## Modeling
+
+![SVD](photos/SVD_image.jpeg)
+
+__Algorithm:__
+Singular Value Decomposition (SVD) has been widely recognized for its efficacy in recommendation systems, particularly in scenarios involving large datasets with user-item interactions. In the context of my anime recommender system, SVD can be instrumental in deciphering latent features that underline the interactions between users and anime titles.
+
+__How it works:__
+Essentially, SVD decomposes the the user-anime ratings matrix into three separate matrices, revealing the hidden features that connect the users and anime in a lower-dimensional space. This enables the prediction of unobserved user-item interactions and allows the system to recommend animes that a user might prefer. For instance, the paper "A music recommendation system based on collaborative filtering and SVD" by Yu-Chuan Chen demonstrates that SVD outperforms item-based collaborative filtering in music recommendations[^3^]. Moreover, the "Rec-CFSVD++: Implementing Recommendation System Using Collaborative Filtering and Singular Value Decomposition (SVD)++" paper illustrates a practical hybrid implementation of SVD++ in a recommendation system, showcasing its capability to predict missing ratings and recommend top-N user-preferred items by leveraging both explicit and implicit feedback[^4^].
+
+
+## Results and Deployment
 
 The SVD model, configured with parameters `n_factors=20`, `n_epochs=25`, `lr_all=0.005`, `reg_all=0.04`, and `random_state=42`, achieved an RMSE of 1.16. This score, while indicative of a decent model, also highlights room for improvement in predicting user ratings for anime titles. The model successfully navigates through the vast anime space, providing recommendations by identifying patterns in user-item interactions. However, it's worth noting that like any collaborative filtering approach, it has limitations, especially when dealing with new users or items (cold start problem).
+
+![Photo of recommender app](photos/AnimeSage.jpg)
+![Recommendations](photos/Recommendations.png)
 
 The user interface, crafted to be intuitive and user-friendly, serves as a practical medium for users to interact with the recommendation system. It allows users to rate anime and receive recommendations, thereby creating a dynamic and interactive anime exploration experience.
 
@@ -66,3 +80,5 @@ While the current model provides a solid foundation, exploring a hybrid model th
 
 [^1^]Aziz, M., & Ong, S. (2023). The Implementation of Japanese Animation (Anime) In Advertising. Retrieved from https://jiss.publikasiindonesia.id/index.php/jiss/article/download/810/1524.
 [^2^]Cho, H., Schmalz, M. L., Keating, S., & Lee, J. H. (2017). Information Needs for Anime Recommendation: Analyzing Anime Users' Online Forum Queries. In Proceedings of the 2017 ACM/IEEE Joint Conference on Digital Libraries (JCDL '17). DOI: 10.1109/JCDL.2017.7991602.
+[^3^]: [A music recommendation system based on collaborative filtering and SVD](https://dx.doi.org/10.1109/TOCS56154.2022.10016210)
+[^4^]: [Rec-CFSVD++: Implementing Recommendation System Using Collaborative Filtering and Singular Value Decomposition (SVD)++](https://dx.doi.org/10.1142/S0219622021500310)
