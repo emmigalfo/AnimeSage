@@ -76,6 +76,18 @@ The user interface, crafted to be intuitive and user-friendly, serves as a pract
 While the current model provides a solid foundation, exploring a hybrid model that integrates collaborative and content-based filtering could enhance the recommendation quality. The content-based component would utilize anime attributes (e.g., genre, type) to generate recommendations, providing a solution to the cold start problem by ensuring that recommendations can still be made in the absence of user-item interaction data.
 
 
+***
+Thank You!
+emmi.galfo@gmail.com
+***
+
+## Repository structure: 
+├── Photos : images used in readme, presentation, and notebook \
+├── AnimeSage : Recommendation app \
+├── Exploratory_Data_Analysis.ipynb: jupyter notebook with EDA \
+├── Modeling.ipynb: jupyter notebook with modeling and conclusions \
+├── README.md : project summary and conclusions \
+├── AnimeSage_Presentation.pdf : stakeholder powerpoint slides 
 
 
 [^1^]Aziz, M., & Ong, S. (2023). The Implementation of Japanese Animation (Anime) In Advertising. Retrieved from https://jiss.publikasiindonesia.id/index.php/jiss/article/download/810/1524.
