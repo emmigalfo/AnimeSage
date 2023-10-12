@@ -13,6 +13,7 @@ The recommendation system is built upon data derived from My Anime List, a well-
 - **User Ratings Data (`rating_complete.csv`):** This dataset includes the user interaction with various anime titles, represented through user IDs, anime IDs, and the respective ratings assigned by the users
 
 ## Exploratory Data Analysis
+
 ### Numerical Data
 ![heatmap of numerical correlation](photos/correlation_heatmap.png)
 __Insights:__
@@ -23,16 +24,42 @@ There are quite a few features that show strong correlations. Lets look more clo
 * It also follows that the more people have the show marked on their list, the more people will have it tagged as 'plan to watch' as well as a higher score of 6-10. It goes along with the idea that the higher scored shows would be watched or planned to watch.
 * Favorites also is highly correlated with the higher score columns which is expected. 
 * The score columns (1-10) tend to highly correlate with the numerical score column directly above and directly below them. For example score-9 highly correlates with score-8 and score-10 but not with score-4. This makes sense overall a show will score within a certain range.
+
 ![user ratings](photos/distribution_user_ratings.png)
 
+__Insights:__
+- **Total Unique Users**: 310,059
+- **Average Number of Ratings per User**: Approximately 185.88
+- **Maximum Number of Ratings by a Single User**: 15,455
+- **Minimum Number of Ratings by a Single User**: 1
+
+![histogram of ratings](photos/histogram_ratings.png)
+
+__Insights:__
+We can see from the graph that the majority of ratings were higher than five and the median probably falls somewhere between 7 and 8.
+
 ### Categorical Data
+
 ![Word cloud of categorical data](photos/wordcloud.png)
 ![squarify](photos/squarify.png)
 ![piechart](photos/ratingchart.png)
+
 __Insights:__
 1. It should come to no surprise for anime lovers that comedy was by far the most listed genre followed by action.
 2. Toei Animation dominated in terms of studios with the most anime listed.  
 3. Most anime was rated either PG-13, or G.
+
+## Results and Conclusions
+
+The SVD model, configured with parameters `n_factors=20`, `n_epochs=25`, `lr_all=0.005`, `reg_all=0.04`, and `random_state=42`, achieved an RMSE of 1.16. This score, while indicative of a decent model, also highlights room for improvement in predicting user ratings for anime titles. The model successfully navigates through the vast anime space, providing recommendations by identifying patterns in user-item interactions. However, it's worth noting that like any collaborative filtering approach, it has limitations, especially when dealing with new users or items (cold start problem).
+
+The user interface, crafted to be intuitive and user-friendly, serves as a practical medium for users to interact with the recommendation system. It allows users to rate anime and receive recommendations, thereby creating a dynamic and interactive anime exploration experience.
+
+### Next Steps
+
+**Hybrid Model Exploration:**
+
+While the current model provides a solid foundation, exploring a hybrid model that integrates collaborative and content-based filtering could enhance the recommendation quality. The content-based component would utilize anime attributes (e.g., genre, type) to generate recommendations, providing a solution to the cold start problem by ensuring that recommendations can still be made in the absence of user-item interaction data.
 
 
 
