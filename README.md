@@ -96,6 +96,17 @@ The SVD model, configured with parameters `n_factors=20`, `n_epochs=25`, `lr_all
 
 The user interface, crafted to be intuitive and user-friendly, serves as a practical medium for users to interact with the recommendation system. It allows users to rate anime and receive recommendations, thereby creating a dynamic and interactive anime exploration experience.
 
+## Actions for a Streaming Platform
+**Recommending Anime on the Streaming Platform:**
+
+* Use highly rated and highly popular anime filter to make solid general recommendations to new users. 
+* Transition to SVD model suggestions as soon as users engage.
+
+**Interactive User Engagement:**
+
+* Integrate the interactive application into the main interface.
+* Use user interactions with AnimeSage to generate tailored recommendations for users. 
+
 ### Next Steps
 
 **Hybrid Model Exploration:**
