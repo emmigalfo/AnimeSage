@@ -67,7 +67,7 @@ __Top Anime based on Popularity and Rating:__
 * Steins;Gate
 * Hunter x Hunter
 * A Silent Voice
-* Clannad ~After Story~
+* Clannad After Story
 * Your Name.
 * Code Geass:Lelouch of the Rebellion R2
 * Mob Psycho 100 II
@@ -107,7 +107,7 @@ The user interface, crafted to be intuitive and user-friendly, serves as a pract
 * Integrate the interactive application into the main interface.
 * Use user interactions with AnimeSage to generate tailored recommendations for users. 
 
-### Next Steps
+## Next Steps
 
 **Hybrid Model Exploration:**
 
