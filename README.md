@@ -49,6 +49,7 @@ __Insights:__
 2. Toei Animation dominated in terms of studios with the most anime listed.  
 3. Most anime was rated either PG-13, or G.
 
+![
 ## Modeling
 
 ![SVD](photos/SVD_image.jpeg)
