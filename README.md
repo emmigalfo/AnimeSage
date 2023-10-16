@@ -52,7 +52,30 @@ __Insights:__
 2. Toei Animation dominated in terms of studios with the most anime listed.  
 3. Most anime was rated either PG-13, or G.
 
-![
+![highest scored genres](photos/highest_scored_genres.png)
+![most popular genres](photos/top_genres.png)
+
+__Insights:__
+There were not a lot of differences between the ratings of the highest rated items in the categorical columns. 
+There was more of a difference in terms of what seems to be popular but looking at the genres for popularity, it may be more that a few niche animes are generating a lot of popularity so the genre as a whole seems more popular than it actually is (ex. dementia). 
+
+Let's ponder a question: Where should a newcomer to anime begin their journey? Opting for the most popular titles might seem logical, yet popularity doesn't always equate to high quality. On the other hand, while a top-rated anime might be critically acclaimed, its appeal might be niche, making it less suitable for general audiences. Therefore, a balanced approach could be to first identify the most popular animes and then, from that subset, select those with the highest scores.
+![top anime based on popularity and score](photos/top_10.png)
+
+__Top Anime based on Popularity and Rating:__
+* Fullmetal Alchemist:Brotherhood
+* Steins;Gate
+* Hunter x Hunter
+* A Silent Voice
+* Clannad ~After Story~
+* Your Name.
+* Code Geass:Lelouch of the Rebellion R2
+* Mob Psycho 100 II
+* Spirited Away
+* Cowboy Bebop
+
+__Insights:__ For an initial solution, especially when we have zero data about a user, these could be reasonable recommendations. It's likely that the recommended anime would be enjoyable for many newcomers, given their widespread popularity and high ratings. However, the ultimate goal is to incorporate personalization as soon as feasible to enhance the user experience.
+
 ## Modeling
 
 ![SVD](photos/SVD_image.jpeg)
