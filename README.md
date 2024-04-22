@@ -10,7 +10,7 @@ There has been a surge in anime's popularity, not only in Japan but globally. An
 This project, born from my own challenges to find useful anime recommendations, aims to simplify this journey by developing a precise recommendation system tailored to individual preferences. In the booming anime industry, this system serves dual purposes: guiding viewers to titles they'll love and providing streaming platforms with a tool to enhance user engagement and potentially increase revenue through personalized content suggestions. The goal is to enrich the anime discovery and viewing experience on platforms, creating a win-win scenario for both viewers and streaming platforms by facilitating more personalized and satisfying content exploration.
 
 ## Data Understanding
-The recommendation system is built upon data derived from My Anime List, a well-known online platform that provides its users with a comprehensive database of anime, including user ratings, reviews, and recommendations. The datasets utilized for this project can be accessed and reviewed [here](https://github.com/Hernan4444/MyAnimeList-Database). The files used were the anime.csv and rating_complete.csv files within the data folder.
+The recommendation system is built upon data derived from My Anime List, a well-known online platform that provides its users with a comprehensive database of anime including anime descriptions and user ratings. The datasets utilized for this project can be accessed and reviewed [here](https://github.com/Hernan4444/MyAnimeList-Database). The files used were the anime.csv and rating_complete.csv found within the data folder.
 
 - **Anime Data (`anime.csv`):** This dataset provides a detailed overview of various anime titles available on the platform. It encompasses numerous attributes such as anime ID, name, genre, type (e.g., TV, movie), episodes, rating, and members, among others.
 - **User Ratings Data (`rating_complete.csv`):** This dataset includes the user interaction with various anime titles, represented through user IDs, anime IDs, and the respective ratings assigned by the users
@@ -20,7 +20,7 @@ The recommendation system is built upon data derived from My Anime List, a well-
 ### Numerical Data
 ![heatmap of numerical correlation](photos/correlation_heatmap.png)
 __Insights:__
-There are quite a few features that show strong correlations. Lets look more closely at them.
+There are quite a few features that show strong correlations.
 * Score was highly negatively correlated with ranking. This is because ranking is determined by the score (with the exception of rated R18+ not being included in rankings)
 * Popularity and ranking are highly correlated. The higher the ranking the more likely people are to have seen it.
 * Members and Completed are very highly correlated. It follows that the more people have completed the show, the more members have it on their list.
